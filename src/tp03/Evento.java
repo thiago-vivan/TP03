@@ -2,10 +2,14 @@ package tp03;
 
 public class Evento {
 
-	private String nomeEvento;
+	private static String nomeEvento;
+	private static Usuario nomeUs ;
 	
-	public String setNomeEvento() {
-		setNomeEvento().toString("evento do " + get. )
+	
+	public static String setNomeEvento() {
+		
+		System.out.println("festa do " + Usuario.getNomeUs());
+		return nomeEvento;
 	}
 
 

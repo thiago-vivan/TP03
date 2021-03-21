@@ -5,8 +5,16 @@ import java.util.Random ;  /* utilizado para randomizar se o convidado está conf
 public class Convidado extends Pessoa {
 
 	private boolean confirmado;;
-	convidado1 = new pessoa;
+	Convidado convidado = new Convidado();
+	Random random = new Random();
 	
+	
+	public boolean isConfirmado() {
+		return confirmado;
+	}
+	public void setConfirmado(boolean confirmado) {
+		this.confirmado = confirmado;
+	}
 	
 	/* classe de convidados- confirmados-nome */
 }
