@@ -4,23 +4,39 @@ import java.util.Scanner;
 
 public class Usuario extends Pessoa{
 	
-	private static String nomeUs = "";
-
-	public static  String lerNomeUs() {
-		System.out.println("informe o nome do usuario:");
-		Scanner ler = new Scanner(System.in);
-		return nomeUs = ler.next();
-		
-	}
+	private String login;
+	private String senha;
+	private boolean status;
 	
-	
-	public static String getNomeUs() {
-		return nomeUs;
+	public Usuario(String login, String senha) {
+		super(nome, telefone);
+		this.login = login;
+		this.senha = senha;
+		this.status = status;
 	}
 
-	public void setNomeUs(String nomeUs) {
-		Usuario.nomeUs = nomeUs;
+	public String getLogin() {
+		return login;
 	}
-	
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 }
-

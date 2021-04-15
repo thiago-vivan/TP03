@@ -3,7 +3,7 @@ package tp03;
 public class Evento {
 
 	private static String nomeEvento;
-	private static Usuario nomeUs ;
+
 	
 	
 	public static String setNomeEvento() {
