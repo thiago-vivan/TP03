@@ -29,6 +29,6 @@ public abstract class Pessoa {
 
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
-	}
-
+	
+}
 }
