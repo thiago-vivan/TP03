@@ -1,14 +1,13 @@
 package tp03;
 
-import java.util.Scanner;
-
 public class Usuario extends Pessoa{
 	
 	private String login;
 	private String senha;
 	private boolean status;
 	
-	public Usuario(String login, String senha) {
+	
+	public Usuario(String login, String senha, String nome, int telefone) {
 		super(nome, telefone);
 		this.login = login;
 		this.senha = senha;
