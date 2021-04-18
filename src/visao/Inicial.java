@@ -2,18 +2,23 @@ package visao;
 import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import controle.Principal;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Inicial extends JFrame{
 
-	TelaLogin tela = new TelaLogin();
-			
-	public Inicial() {									// CONSTRUTOR
-	
-	
-	}
 
+	
+	public Principal p = new Principal();
+	
+		public Inicial() {									// CONSTRUTOR
+	
+		}
+
+//	Função para abrir a janela inicial do programa
+//		
+//		
 	public void janelaInicial() {
 	
 		
@@ -34,43 +39,36 @@ public class Inicial extends JFrame{
 		JButton b = new JButton("Login");
 		b.setBounds (125, 125, 200, 100);
 		b.setVisible(true);
-		b.setLayout(null);
-		
-		f.add(b);
-	
-		b.addActionListener(new ActionListener() {
-			
+		b.setLayout(null);		
+		b.addActionListener(new ActionListener() {			
 			public void actionPerformed(ActionEvent e) {
-					
 			
-			tela.setVisible(true);
-			f.setVisible(false);
+			TelaLogin tela = new TelaLogin();
+			tela.janelaLogin(p);
 			}
-			
-		}
-		);
-
+		});
+		f.add(b);
+		
 		JButton b2 = new JButton("Registrar Usuário");
 		b2.setBounds (125, 250, 200, 100);
-		b2.setVisible(true);
-		
-		f.add(b2);
-		
+		b2.setVisible(true);	
 		b2.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-					
-				CadUser cadu = new CadUser();
-				cadu.setVisible(true);
-			
-			}
-			
-		}
-		);
+				CadUser cadU = new CadUser();
+				cadU.CadastroUsuario(p);	
+
+			}			
+		});
+	
+		f.add(b2);
 	}
 
+//	Função utilizada para alterar a visibilidade do JFrame da janela inicial
+//	
+//	
 	public void Visivel() {
-		setVisible(true);
+		setVisible(false);
 	}
 
 }

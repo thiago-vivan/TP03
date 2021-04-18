@@ -3,7 +3,6 @@ package visao;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -11,131 +10,143 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import controle.*;
+import tp03.Usuario;
 
-/**
- * Classe responsável por apresentar uma interface de cadastro de usuário simples e interativa para o usuário
- * @author Thiago França
- * @version 1.0 (29/11/2020)
- */
+
 public class CadUser extends JFrame {
 	
 
-	private JTextField textField;
+	public JTextField textField;
+	public JTextField textField_1;
+	public JTextField textField_2;
+	public JTextField textField_3;
+	public JTextField textField_6;
+
+
+
 	
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+//	Função para gerar janela de cadastro de usuario
+//
+//
+	public void CadastroUsuario(Principal p) {
 
-	private JTextField textField_6;
-
-
-	// private Validacoes check = new Validacoes();
-	
-
-
-	public void CadastroUsuario() {
-		
-		JFrame f = new JFrame("cadastrar usuario");		
-		f.setBounds(500, 300, 500, 400);
-		f.setVisible(true);
-		f.setLayout(null);
-		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JFrame cadU = new JFrame("cadastrar usuario");		
+		cadU.setBounds(500, 300, 500, 400);
+		cadU.setLayout(null);
+		cadU.setVisible(true);
+		cadU.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
 		JLabel lblNewLabel = new JLabel("Login:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 15));
 		lblNewLabel.setBounds(64, 61, 77, 27);
-		f.add(lblNewLabel);
+		lblNewLabel.setVisible(true);
+		cadU.add(lblNewLabel);
 		
 		textField = new JTextField();
 		textField.setBounds(151, 61, 217, 27);
-		f.add(textField);
+		cadU.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblSenha.setFont(new Font("Arial", Font.PLAIN, 15));
 		lblSenha.setBounds(64, 98, 77, 27);
-		f.add(lblSenha);
+		lblSenha.setVisible(true);
+		cadU.add(lblSenha);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(151, 98, 217, 27);
-		f.add(textField_1);
+		textField_1.setVisible(true);
+		cadU.add(textField_1);
 		
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblNome.setFont(new Font("Arial", Font.PLAIN, 15));
 		lblNome.setBounds(64, 135, 77, 27);
-		f.add(lblNome);
+		lblNome.setVisible(true);
+		cadU.add(lblNome);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(151, 135, 217, 27);
-		f.add(textField_2);
-		
-		JLabel lblEmail = new JLabel("E-mail:");
-		lblEmail.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblEmail.setFont(new Font("Arial", Font.PLAIN, 15));
-		lblEmail.setBounds(64, 172, 77, 27);
-		f.add(lblEmail);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(151, 172, 217, 27);
-		f.add(textField_3);
-		
-
+		textField_2.setVisible(true);
+		cadU.add(textField_2);
 		
 
 		JLabel lblTelefone_1 = new JLabel("Telefone:");
 		lblTelefone_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTelefone_1.setFont(new Font("Arial", Font.PLAIN, 15));
-		lblTelefone_1.setBounds(64, 283, 77, 27);
-		f.add(lblTelefone_1);
+		lblTelefone_1.setBounds(64, 172, 77, 27);
+		lblTelefone_1.setVisible(true);
+		cadU.add(lblTelefone_1);
 		
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
-		textField_6.setBounds(151, 283, 217, 27);
-		f.add(textField_6);
+		textField_6.setBounds(151, 172, 217, 27);
+		textField_6.setVisible(true);
+		cadU.add(textField_6);
 		
 		JLabel lblNewLabel_1 = new JLabel("Criar nova conta");
 		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 15));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(151, 10, 217, 34);
-		f.add(lblNewLabel_1);
+		lblNewLabel_1.setVisible(true);
+		cadU.add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("Cadastrar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				if(textField.getText().equals("") || textField_1.getText().equals("") || textField_2.getText().equals("") ||  
-//					textField_3.getText().equals("")  || textField_6.getText().equals("")) {
-//						JOptionPane.showMessageDialog(null, "Preencha todos os campos antes de criar sua conta", null, JOptionPane.ERROR_MESSAGE);
-//					}else {
-//					if(check.vcu(p.livraria ,textField.getText(), textField_3.getText())) {
-//				principal.cadastrarUsu(cadastrar());
-//				principal.visivel();
-//				setVisible(false);
-//			} 
-//					}
+				if(textField.getText().equals("") || textField_1.getText().equals("") || textField_2.getText().equals("") ||  
+					 textField_6.getText().equals("")) {
+						JOptionPane.showMessageDialog(null, "Preencha todos os campos antes de criar sua conta", null, JOptionPane.ERROR_MESSAGE);
+					}else {				
+						
+						p.cadastraUsu(textField.getText(), textField_1.getText(), textField_2.getText(),
+								Integer.parseInt(textField_6.getText()));
+						setVisible(false);
+			
+					}
 			}
 		});
-		btnNewButton.setBounds(150, 320, 98, 46);
-		f.add(btnNewButton);
+		btnNewButton.setBounds(150, 250, 98, 46);
+		btnNewButton.setVisible(true);
+		cadU.add(btnNewButton);
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			setVisible(false);
-		//	principal.visivel();
+			cadU.setVisible(false);
+		
 			}
 		});
-		btnVoltar.setBounds(270, 320, 98, 46);
-		f.add(btnVoltar);
+		btnVoltar.setBounds(270, 250, 98, 46);
+		btnVoltar.setVisible(true);
+		cadU.add(btnVoltar);
 	}
-
+	
+// Funçao que cadastra um obj Usuario e seus parametros
+//	
+//	
+	public Usuario cadastrar() {
+		
+		Usuario u = new Usuario(textField.getText(), textField_1.getText(), textField_2.getText(),
+				Integer.parseInt(textField_6.getText()));
+	
+		u.setLogin(textField.getText());
+		
+		u.setSenha(textField_1.getText());
+		
+		u.setNome(textField_2.getText());
+		
+		u.setTelefone(Integer.parseInt(textField_6.getText()));
+		
+		return u;
+		
+		
+	}
 
 	}
 
