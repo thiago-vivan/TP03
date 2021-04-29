@@ -1,13 +1,12 @@
  package visao;
 
 
-	import javax.swing.JFrame;
+import javax.swing.JFrame;
 	import javax.swing.JPanel;
 	import javax.swing.border.EmptyBorder;
 	import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Font;
+	import javax.swing.JOptionPane;
+	import java.awt.Font;
 	import javax.swing.SwingConstants;
 	import javax.swing.JTextField;
 	import javax.swing.JButton;
@@ -16,20 +15,24 @@ import java.awt.Font;
 	import java.awt.event.ActionEvent;
 	import controle.*;
 
-	public class TelaLogin extends JFrame {	
+/**
+ * Classe onde será realizado o login
+ * @author thiag
+ *
+ */
+public class TelaLogin extends JFrame {	
 		
 
 		private JTextField textField;
 		private JPasswordField passwordField;
 		private Inicial ini;
 			
-		public TelaLogin() {
-			
-		}
 
-// Função que dá origem a jenela de login		
-//
-//		
+
+		/**
+		 * Metódo que cria Janela de login
+		 * @param p
+		 */
 		public void janelaLogin(Principal p) {			
 			
 			JFrame tela = new JFrame("Tela Login");		
@@ -80,13 +83,21 @@ import java.awt.Font;
 				public void actionPerformed(ActionEvent e) {
 					if(textField.getText().equals("") || passwordField.getText().equals("") ) {
 								JOptionPane.showMessageDialog(null, "Preencha todos os campos antes de logar", null, JOptionPane.ERROR_MESSAGE);
-							}else {	
-					String s = passwordField.getText();
-					p.realizarLogin(textField.getText(), s);
-					MenuPrinci menu = new MenuPrinci();
-					menu.telaMenu(p);
-					tela.setVisible(false);
 							}
+					else {	
+					
+						String s = passwordField.getText();
+						
+							if (p.realizarLogin(textField.getText(), s) == true) {																
+
+								MenuPrinci menu = new MenuPrinci();
+								menu.telaMenu(p);
+								tela.setVisible(false);
+							}
+							else {
+								JOptionPane.showMessageDialog(null, "Login ou senha incorretos", null, JOptionPane.ERROR_MESSAGE);
+							}
+					}
 				}
 			});
 			btnLogin.setBounds(185, 138, 98, 46);
