@@ -6,19 +6,25 @@ import controle.Principal;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+/**
+ * Classe inicial do programa
+ * @author thiag
+ * @version 1.0 (28/04/2021)
+ */
 public class Inicial extends JFrame{
 
 
-	
+	 
 	public Principal p = new Principal();
 	
 		public Inicial() {									// CONSTRUTOR
 	
 		}
 
-//	Função para abrir a janela inicial do programa
-//		
-//		
+/**
+ * Método que cria janela inicial	
+ */
 	public void janelaInicial() {
 	
 		
@@ -64,11 +70,6 @@ public class Inicial extends JFrame{
 		f.add(b2);
 	}
 
-//	Função utilizada para alterar a visibilidade do JFrame da janela inicial
-//	
-//	
-	public void Visivel() {
-		setVisible(false);
-	}
+
 
 }

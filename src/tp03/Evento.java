@@ -3,20 +3,36 @@ package tp03;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Classe base do evento
+ * @author thiag
+ * @version 1.0 (28/04/2021)
+ */
 public class Evento {
 
 	private String nomeEve;
-	private Date dataEv;
+	private String dataEv;
 	private ArrayList<Convidado> convidados = new ArrayList<Convidado>();
-	private Float saldo;
+	private Float saldo;														
 	private Orçamento orç = new Orçamento();
 	private Gastos gastoTotal;
 	private Gastos gasto;
 			
 	public Evento() {
+		
 	}
 	
-	
+	/**
+	 * Metodo retornaConv, responsavel por montar um array com os nomes dos convidados
+	 * @return
+	 */
+	public String[] retornaConv() {
+	String stringConv[] = new String[convidados.size()];							//   pega cada nome de 
+	for(int i = 0; i < convidados.size(); i++) {									//   convidados e transforma 
+		stringConv[i] = convidados.get(i).getNome();								//	em um array de string
+	}
+	return stringConv;
+	}
 	
 	
 	public void addConvidado(Convidado c) {
@@ -51,11 +67,11 @@ public class Evento {
 		this.nomeEve = nomeEve;
 	}
 
-	public Date getDataEv() {
+	public String getDataEv() {
 		return dataEv;
 	}
 
-	public void setDataEv(Date dataEv) {
+	public void setDataEv(String dataEv) {
 		this.dataEv = dataEv;
 	}
 

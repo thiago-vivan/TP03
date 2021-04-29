@@ -1,5 +1,10 @@
 package tp03;
 
+/**
+ * Classe Usuario
+ * @author thiag
+ * @version 1.0 (28/04/2021)
+ */
 public class Usuario extends Pessoa{
 	
 	private String login;
@@ -17,7 +22,7 @@ public class Usuario extends Pessoa{
 	public String getLogin() {
 		return login;
 	}
-
+ 
 	public void setLogin(String login) {
 		this.login = login;
 	}

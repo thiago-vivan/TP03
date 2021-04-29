@@ -12,7 +12,11 @@ import java.awt.event.ActionEvent;
 import controle.*;
 import tp03.Usuario;
 
-
+/**
+ * clase CadUser onde será criada uma janela interativa para cadastrar um usuario
+ * @author thiag
+ * @version 1.0 (28/04/2021)
+ */
 public class CadUser extends JFrame {
 	
 
@@ -25,9 +29,10 @@ public class CadUser extends JFrame {
 
 
 	
-//	Função para gerar janela de cadastro de usuario
-//
-//
+/**
+ * metodo que cria a janela para cadastro do usuario
+ * @param p
+ */
 	public void CadastroUsuario(Principal p) {
 
 		JFrame cadU = new JFrame("cadastrar usuario");		
@@ -99,9 +104,10 @@ public class CadUser extends JFrame {
 		JButton btnNewButton = new JButton("Cadastrar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				if(textField.getText().equals("") || textField_1.getText().equals("") || textField_2.getText().equals("") ||  
-					 textField_6.getText().equals("")) {
-						JOptionPane.showMessageDialog(null, "Preencha todos os campos antes de criar sua conta", null, JOptionPane.ERROR_MESSAGE);
+					 textField_6.getText().equals("") || !p.verificaTel(textField_6.getText())) {
+						JOptionPane.showMessageDialog(null, "Verifique se os dados estão corretos ", null, JOptionPane.ERROR_MESSAGE);
 					}else {				
 						
 						p.cadastraUsu(textField.getText(), textField_1.getText(), textField_2.getText(),
@@ -127,9 +133,10 @@ public class CadUser extends JFrame {
 		cadU.add(btnVoltar);
 	}
 	
-// Funçao que cadastra um obj Usuario e seus parametros
-//	
-//	
+/**
+ * metodo para cadastrar efetivamente um usuario
+ * @return
+ */
 	public Usuario cadastrar() {
 		
 		Usuario u = new Usuario(textField.getText(), textField_1.getText(), textField_2.getText(),

@@ -1,6 +1,10 @@
 package tp03;
 
-                                       
+/**
+* Classe Convidado                  
+* @author thiag
+* @version 1.0 (28/04/2021)
+*/
 public class Convidado extends Pessoa {
   
 	private boolean confirmado;;                                
@@ -13,7 +17,7 @@ public class Convidado extends Pessoa {
 	
 	}
 
-
+ 
 
 	public boolean isConfirmado() {
 		return confirmado;
@@ -26,5 +30,11 @@ public class Convidado extends Pessoa {
 	}
 		
 	
+
+
+
+
+
+
 }	
 	
