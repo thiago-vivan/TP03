@@ -1,6 +1,10 @@
 package tp03;
-
-public abstract class Pessoa {
+/**
+ * Classe abstrata pessoa, da origem a classe usuario e classe convidado
+ * @author thiag
+ * @version1.0 (28/04/2021)
+ */
+public abstract class Pessoa {						//Classe abstrata Pessoa que gera usuario e convidados
 
 	protected String nome;
 	protected int telefone;
@@ -16,7 +20,7 @@ public abstract class Pessoa {
 		return nome;
 	}
 
-
+ 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
